@@ -6,7 +6,7 @@
 #    By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 16:27:02 by sikang            #+#    #+#              #
-#    Updated: 2022/07/06 18:50:29 by sikang           ###   ########.fr        #
+#    Updated: 2022/07/21 10:21:23 by sikang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ FLAGS		= -Wall -Wextra -Werror
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
+		make -C ./mlx
 		make all -C $(LIBFT)/
 		gcc -o $(NAME) $(OBJS) -Llibft -lft -L./mlx -lmlx -framework OpenGL -framework AppKit
 
@@ -37,11 +38,13 @@ $(NAME)		:	$(OBJS)
 clean		:
 		rm -f $(OBJS)
 		make clean -C $(LIBFT)
+		make clean -C ./mlx
 
 fclean		:	clean
 		rm -f $(NAME)
 		rm -f $(LIBFT_LIB)
 		make fclean -C $(LIBFT)
+		make fclean -C ./mlx
 
 re			:	fclean all
 

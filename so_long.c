@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:25:46 by sikang            #+#    #+#             */
-/*   Updated: 2022/07/21 09:47:03 by sikang           ###   ########.fr       */
+/*   Updated: 2022/07/21 10:13:44 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	map_read(char *file_name, t_game *game)
 	i = 0;
 
 	fd = open(file_name, O_RDONLY);
+	if (fd == -1)
+		exit_game(game);
 	game->map = (char **)malloc(sizeof(char *) * game->h);
 	while ((line = get_next_line(fd)) > 0)
 	{
@@ -224,8 +226,8 @@ int	main(int argc, char** argv)
 	game->move = 0;
 	if (argc != 2)
 		return (0);
-	map_init(ft_strjoin("./maps/", argv[1]), game);
-	map_read(ft_strjoin("./maps/", argv[1]), game);
+	map_init(argv[1], game);
+	map_read(argv[1], game);
 	if (valid_map(game) == 0) {
 		ft_putstr_fd("Error\n", 2);
 		return (0);
