@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 19:01:04 by sikang            #+#    #+#             */
-/*   Updated: 2021/08/18 07:54:52 by sikang           ###   ########.fr       */
+/*   Updated: 2022/07/21 09:34:29 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*get_next_line(int fd)
 	while (read_size > 0)
 	{
 		buf[read_size] = 0;
-		store[fd] = ft_strjoin(store[fd], buf);
+		store[fd] = ft_strjoin_gnl(store[fd], buf);
 		if (ft_strchr(store[fd], '\n'))
 			return (split_line(&store[fd]));
 		read_size = read(fd, buf, BUFFER_SIZE);

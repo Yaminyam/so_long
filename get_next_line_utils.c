@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 19:01:41 by sikang            #+#    #+#             */
-/*   Updated: 2021/08/18 07:35:55 by sikang           ###   ########.fr       */
+/*   Updated: 2022/07/21 09:34:39 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ size_t	ft_strlen(const char *s)
 	return (cnt);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	int		n;
 	char	*str;
