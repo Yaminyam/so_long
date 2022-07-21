@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: sikang <sikang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:29:06 by sikang            #+#    #+#             */
-/*   Updated: 2022/07/21 09:47:24 by sikang           ###   ########.fr       */
+/*   Updated: 2022/07/21 19:42:47 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@
 
 typedef struct s_img {
 	void	*player;
-	void 	*tree;
+	void	*tree;
 	void	*pokemon;
 	void	*ball;
 	void	*tile;
 }				t_img;
+
 typedef struct s_game {
 	void	*mlx;
 	void	*win;
@@ -44,11 +45,20 @@ typedef struct s_game {
 	int		w;
 	int		x;
 	int		y;
+	int		chest;
 	int		move;
 	char	**map;
 }				t_game;
 
-int	check_map(t_game *game);
-int exit_game(t_game *game);
+int		check_map(t_game *game, int player_count, int pokermon_count);
+int		exit_game(t_game *game);
+int		key_press(int keycode, t_game *game);
+void	map_init(char *file_name, t_game *game);
+void	map_read(char *file_name, t_game *game);
+int		valid_map(t_game *game);
+int		check_map(t_game *game, int player_count, int pokemon_count);
+void	setting_img(t_game *game);
+t_img	img_init(void *mlx);
+void	check_img(t_game *game, int h, int w);
 
 #endif

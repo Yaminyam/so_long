@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+         #
+#    By: sikang <sikang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 16:27:02 by sikang            #+#    #+#              #
-#    Updated: 2022/07/21 10:21:23 by sikang           ###   ########.fr        #
+#    Updated: 2022/07/21 19:08:17 by sikang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,9 @@ LIBFT_LIB	= libft.a
 SRCS		= so_long.c \
 			  get_next_line.c \
 			  get_next_line_utils.c \
+			  map.c \
+			  key.c \
+			  image.c \
 
 OBJS		= $(SRCS:%.c=%.o)
 
@@ -44,7 +47,7 @@ fclean		:	clean
 		rm -f $(NAME)
 		rm -f $(LIBFT_LIB)
 		make fclean -C $(LIBFT)
-		make fclean -C ./mlx
+		make clean -C ./mlx
 
 re			:	fclean all
 
