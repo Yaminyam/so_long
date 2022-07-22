@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikang <sikang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:43:47 by sikang            #+#    #+#             */
-/*   Updated: 2022/07/21 19:55:02 by sikang           ###   ########.fr       */
+/*   Updated: 2022/07/22 10:14:40 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	map_init(char *file_name, t_game *game)
 			break ;
 		i++;
 		game->w = ft_strlen(line) - 1;
+		free(line);
 	}
 	game->h = i;
 	close(fd);
@@ -105,7 +106,7 @@ int	check_map(t_game *game, int player_count, int pokemon_count)
 		}
 		i++;
 	}
-	if (player_count != 1 || pokemon_count != 1 || game->chest < 1)
+	if (player_count != 1 || pokemon_count < 1 || game->chest < 1)
 		return (0);
 	return (1);
 }

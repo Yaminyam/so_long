@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikang <sikang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:43:49 by sikang            #+#    #+#             */
-/*   Updated: 2022/07/21 19:52:09 by sikang           ###   ########.fr       */
+/*   Updated: 2022/07/21 20:07:12 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void	key_a(t_game *game)
 {
 	if (game->map[game->y][game->x - 1] == 'E')
 	{
+		ft_putnbr_fd(game->chest, 1);
+		ft_putchar_fd('\n', 1);
 		if (game->chest == 0)
 		{
 			game->move++;

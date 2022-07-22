@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikang <sikang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:25:46 by sikang            #+#    #+#             */
-/*   Updated: 2022/07/21 19:13:45 by sikang           ###   ########.fr       */
+/*   Updated: 2022/07/21 20:10:44 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 	g->mlx = mlx_init();
 	g->img = img_init(g->mlx);
 	g->move = 0;
+	g->chest = 0;
 	if (argc != 2)
 		return (0);
 	map_init(argv[1], g);
